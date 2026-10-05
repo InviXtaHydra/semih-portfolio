@@ -4,6 +4,7 @@ import { ArrowUpRight, Code2 } from 'lucide-react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import ProjectArt from './ProjectArt'
+import DemoPlayer from './DemoPlayer'
 import { domains, projects } from '../data/profile'
 
 const filters = [{ key: 'all', label: 'All' }, ...Object.entries(domains).map(([key, d]) => ({ key, label: d.label }))]
@@ -70,6 +71,9 @@ export default function Projects() {
   )
 }
 
+// Real links open in a new tab; '#' placeholders stay on the page
+const external = (url) => (url?.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})
+
 function ProjectCard({ project, featured }) {
   const mx = useMotionValue(-400)
   const my = useMotionValue(-400)
@@ -97,6 +101,12 @@ function ProjectCard({ project, featured }) {
       <motion.div className="pointer-events-none absolute inset-0 z-10" style={{ background: spotlight }} aria-hidden="true" />
 
       <article className={`relative grid h-full ${featured ? 'md:grid-cols-2' : ''}`}>
+        {project.video ? (
+          // 16:9 so the recording is never cropped; centered next to the text on desktop
+          <div className={`relative z-20 aspect-video overflow-hidden border-b border-rule bg-ink ${featured ? 'md:order-2 md:m-8 md:self-center md:rounded-2xl md:border md:ml-0' : ''}`}>
+            <DemoPlayer title={project.title} video={project.video} poster={project.poster} length={project.videoLength} color={color} />
+          </div>
+        ) : (
         <div className={`relative overflow-hidden border-b border-rule ${featured ? 'aspect-[5/3] md:order-2 md:aspect-auto md:min-h-80 md:border-b-0 md:border-l' : 'aspect-[5/3]'}`}>
           <div className="absolute inset-0 bg-panel-2 transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.04]">
             {project.image ? (
@@ -106,6 +116,7 @@ function ProjectCard({ project, featured }) {
             )}
           </div>
         </div>
+        )}
 
         <div className={`relative z-20 flex flex-col p-6 sm:p-8 ${featured ? 'md:justify-between md:p-10' : ''}`}>
           <div>
@@ -125,17 +136,20 @@ function ProjectCard({ project, featured }) {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={project.demo}
+              {...external(project.demo)}
               className="inline-flex items-center gap-1.5 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
             >
               Live demo <ArrowUpRight size={16} aria-hidden="true" />
             </a>
             <a
               href={project.code}
+              {...external(project.code)}
               className="inline-flex items-center gap-1.5 rounded-full border border-rule px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:border-paper/40"
             >
               <Code2 size={16} aria-hidden="true" /> View code
             </a>
           </div>
+          {project.note && <p className="mt-4 max-w-[52ch] text-sm text-muted">{project.note}</p>}
         </div>
       </article>
     </motion.li>

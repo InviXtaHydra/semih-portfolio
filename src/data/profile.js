@@ -117,6 +117,20 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'IMDBee',
+    category: 'Full-stack',
+    domain: 'code',
+    description:
+      'A movie catalog with accounts, search and filters, star reviews and trailers. Live movie data from TMDB, served through a secured Spring Boot API.',
+    stack: ['Spring Boot', 'Spring Security (JWT)', 'Vue 3', 'Pinia', 'Tailwind CSS', 'PostgreSQL (Supabase)', 'TMDB API'],
+    demo: 'https://imdbee.vercel.app',
+    code: 'https://github.com/InviXtaHydra/imdbee',
+    video: '/projects/imdbee-demo.mp4',
+    poster: '/projects/imdbee-poster.jpg',
+    videoLength: '0:30',
+    note: 'Hosted on free tiers: the first visit can take up to a minute while the server wakes up.',
+  },
+  {
     title: 'Employee Dashboard PWA',
     category: 'Full-stack / Low-code',
     domain: 'code',
