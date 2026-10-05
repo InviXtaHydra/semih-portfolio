@@ -103,7 +103,7 @@ function ProjectCard({ project, featured }) {
       <article className={`relative grid h-full ${featured ? 'md:grid-cols-2' : ''}`}>
         {project.video ? (
           // 16:9 so the recording is never cropped; centered next to the text on desktop
-          <div className={`relative z-20 aspect-video overflow-hidden border-b border-rule bg-ink ${featured ? 'md:order-2 md:m-8 md:self-center md:rounded-2xl md:border md:ml-0' : ''}`}>
+          <div className={`relative z-20 hidden aspect-video overflow-hidden border-rule bg-ink md:block ${featured ? 'md:order-2 md:m-8 md:self-center md:rounded-2xl md:border md:ml-0' : 'border-b'}`}>
             <DemoPlayer title={project.title} video={project.video} poster={project.poster} length={project.videoLength} color={color} />
           </div>
         ) : (
@@ -133,6 +133,12 @@ function ProjectCard({ project, featured }) {
             </ul>
           </div>
 
+          {project.video && (
+            <div className="mt-8 aspect-video overflow-hidden rounded-2xl border border-rule bg-ink md:hidden">
+              <DemoPlayer title={project.title} video={project.video} poster={project.poster} length={project.videoLength} color={color} />
+            </div>
+          )}
+
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={project.demo}
@@ -149,7 +155,6 @@ function ProjectCard({ project, featured }) {
               <Code2 size={16} aria-hidden="true" /> View code
             </a>
           </div>
-          {project.note && <p className="mt-4 max-w-[52ch] text-sm text-muted">{project.note}</p>}
         </div>
       </article>
     </motion.li>

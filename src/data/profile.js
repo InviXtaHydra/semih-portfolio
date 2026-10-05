@@ -128,7 +128,6 @@ export const projects = [
     video: '/projects/imdbee-demo.mp4',
     poster: '/projects/imdbee-poster.jpg',
     videoLength: '0:30',
-    note: 'Hosted on free tiers: the first visit can take up to a minute while the server wakes up.',
   },
   {
     title: 'Employee Dashboard PWA',
