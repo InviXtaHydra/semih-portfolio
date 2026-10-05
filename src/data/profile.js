@@ -127,7 +127,7 @@ export const projects = [
     code: 'https://github.com/InviXtaHydra/imdbee',
     video: '/projects/imdbee-demo.mp4',
     poster: '/projects/imdbee-poster.jpg',
-    videoLength: '0:30',
+    videoLength: '0:42',
   },
   {
     title: 'Employee Dashboard PWA',
