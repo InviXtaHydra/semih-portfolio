@@ -9,14 +9,15 @@ export const domains = {
 
 export const profile = {
   name: 'Semih Altintas',
-  role: 'Full-Stack & Low-Code Developer / SAP BTP Specialist',
+  role: 'Full-Stack & Low-Code Developer',
   tagline:
-    'Bridging full-stack development, low-code platforms, and SAP Cloud technologies to build high-impact digital solutions.',
+    'Bridging full-stack development and low-code platforms to build digital solutions that people actually use.',
   location: 'Maasmechelen, Belgium',
   email: 'semih-altintas@hotmail.com',
   phone: '+32 497 20 14 46',
   phoneHref: '+32497201446',
   linkedin: 'https://www.linkedin.com/in/semih-altintas',
+  github: 'https://github.com/InviXtaHydra',
   education: 'Bachelor in Applied Computer Science (Toegepaste Informatica)',
   languages: [
     { name: 'Dutch', level: 'Native' },
@@ -141,38 +142,6 @@ export const projects = [
     video: '/projects/imdbee-demo.mp4',
     poster: '/projects/imdbee-poster.jpg',
     videoLength: '0:42',
-  },
-  {
-    title: 'Employee Dashboard PWA',
-    category: 'Full-stack / Low-code',
-    domain: 'code',
-    secondary: 'lowcode',
-    description:
-      'A progressive web app that centralizes employee and project tracking, with offline support and automated workflows.',
-    stack: ['Xano', 'Java', 'PWA', 'Vue.js'],
-    demo: '#',
-    code: '#',
-  },
-  {
-    title: 'SAP BTP Integration Hub',
-    category: 'SAP / Cloud',
-    domain: 'sap',
-    description:
-      'An enterprise integration platform with real-time event streaming and custom OData API services.',
-    stack: ['SAP BTP', 'CAP', 'Cloud Integration', 'Event Mesh', 'Node.js'],
-    demo: '#',
-    code: '#',
-  },
-  {
-    title: 'AI-Powered SharePoint Intranet',
-    category: 'Power Platform / Frontend',
-    domain: 'lowcode',
-    secondary: 'code',
-    description:
-      'A custom intranet portal that improves internal communication with automated workflows and AI summaries.',
-    stack: ['SPFx', 'React', 'Power Automate', 'Azure AI'],
-    demo: '#',
-    code: '#',
   },
 ]
 

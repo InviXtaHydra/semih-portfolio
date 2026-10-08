@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Magnetic from './Magnetic'
 import { navLinks, profile } from '../data/profile'
 
 function useActiveSection(ids) {
@@ -80,12 +81,11 @@ export default function Navbar() {
           })}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink transition-transform hover:-translate-y-px md:inline-flex"
-        >
-          Get in touch
-        </a>
+        <Magnetic className="hidden md:inline-flex">
+          <a href="#contact" className="inline-flex rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink">
+            Get in touch
+          </a>
+        </Magnetic>
 
         <button
           type="button"
@@ -141,13 +141,12 @@ export default function Navbar() {
   )
 }
 
-// The three domain strands, in miniature
+// Two waves, code and low-code, as in the hero
 function Monogram() {
   return (
     <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" className="transition-transform duration-500 group-hover:rotate-180">
-      <path d="M5 10c8 0 14 12 22 12" stroke="var(--color-code)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-      <path d="M5 16h22" stroke="var(--color-lowcode)" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M5 22c8 0 14-12 22-12" stroke="var(--color-sap)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      <path d="M4 12c4-5 8-5 12 0s8 5 12 0" stroke="var(--color-code)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      <path d="M4 20c4-5 8-5 12 0s8 5 12 0" stroke="var(--color-lowcode)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
     </svg>
   )
 }

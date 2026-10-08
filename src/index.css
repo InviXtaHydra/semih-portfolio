@@ -12,6 +12,7 @@
   --color-code: #7fa7ff;
   --color-lowcode: #e8b04b;
   --color-sap: #4fd1c5;
+  --color-live: #5fd38d; /* the "open to new roles" dot */
 
   --font-display: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
@@ -51,6 +52,17 @@
     html {
       scroll-behavior: auto;
     }
+  }
+
+  /* Cursor.jsx draws its own cursor for mouse users */
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+
+  /* With the custom cursor, the cursor itself becomes the play button over a video */
+  html.has-custom-cursor .group\/play:hover .play-badge {
+    opacity: 0;
   }
 }
 

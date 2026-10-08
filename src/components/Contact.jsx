@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import Reveal from './Reveal'
 import CopyButton from './CopyButton'
 import LinkedInIcon from './LinkedInIcon'
+import GitHubIcon from './GitHubIcon'
 import { profile } from '../data/profile'
 
 export default function Contact() {
@@ -30,7 +31,12 @@ export default function Contact() {
           <p className="inline-flex items-center gap-2">
             <MapPin size={14} aria-hidden="true" /> {profile.location}
           </p>
-          <a href="#top" className="transition-colors hover:text-paper">Back to top</a>
+          <span className="flex gap-6">
+            <a href={profile.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-paper">
+              <GitHubIcon size={14} /> GitHub
+            </a>
+            <a href="#top" className="transition-colors hover:text-paper">Back to top</a>
+          </span>
         </footer>
       </div>
     </section>
