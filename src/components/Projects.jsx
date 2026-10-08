@@ -140,13 +140,16 @@ function ProjectCard({ project, featured }) {
           )}
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={project.demo}
-              {...external(project.demo)}
-              className="inline-flex items-center gap-1.5 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
-            >
-              Live demo <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            {/* Projects without a hosted version (e.g. a local AI model) only show the video and the code */}
+            {project.demo && (
+              <a
+                href={project.demo}
+                {...external(project.demo)}
+                className="inline-flex items-center gap-1.5 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                Live demo <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
+            )}
             <a
               href={project.code}
               {...external(project.code)}

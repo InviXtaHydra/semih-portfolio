@@ -117,6 +117,19 @@ export const experience = [
 
 export const projects = [
   {
+    title: 'Invixta',
+    category: 'Full-stack / AI',
+    domain: 'code',
+    description:
+      'A football-shirt web shop with an AI support assistant. Customers print a name and number on a shirt, pay and follow their order; the assistant answers from real orders, stock and policy documents (RAG), and asks before it cancels anything. The model runs locally in Ollama: no API costs, no customer data leaving the server.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL + pgvector', 'RAG', 'Ollama (qwen3)', 'React 19', 'TypeScript', 'Tailwind CSS', 'Docker', 'Playwright'],
+    // No live demo: the language model runs on my own machine. The video shows the real app and model.
+    code: 'https://github.com/InviXtaHydra/invixta',
+    video: '/projects/invixta-demo.mp4',
+    poster: '/projects/invixta-poster.jpg',
+    videoLength: '0:46',
+  },
+  {
     title: 'IMDBee',
     category: 'Full-stack',
     domain: 'code',
