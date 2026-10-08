@@ -14,6 +14,7 @@ const ease = [0.22, 1, 0.36, 1]
 const roles = [
   { text: 'Full-stack developer', color: 'var(--color-code)' },
   { text: 'Low-code developer', color: 'var(--color-lowcode)' },
+  { text: 'AI enthusiast', color: 'var(--color-ai)' },
 ]
 
 export default function Hero() {

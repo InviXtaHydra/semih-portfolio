@@ -5,6 +5,7 @@ export const domains = {
   code: { label: 'Full-stack', color: 'var(--color-code)' },
   lowcode: { label: 'Low-code', color: 'var(--color-lowcode)' },
   sap: { label: 'SAP cloud', color: 'var(--color-sap)' },
+  ai: { label: 'AI & agents', color: 'var(--color-ai)' },
 }
 
 export const profile = {
@@ -30,6 +31,10 @@ export const profile = {
     'Some problems need hand-written Java or .NET. Others are solved faster with a Power Automate flow or a CAP service on SAP BTP. I move between code and configuration, so the team gets the right tool instead of the familiar one.',
     'I learn quickly, think analytically, and I’m used to working in Agile/Scrum teams: daily stand-ups, refinements, sprint reviews and code reviews.',
   ],
+  ai: [
+    'I’m an AI enthusiast. When I need to figure something out, I reach for AI first, and more and more for AI agents that look things up and take the next step on their own.',
+    'In my free time I watch and read a lot about where AI is heading, and I experiment with it myself. Invixta, for example, has a support agent that runs on a local model, searches the shop’s documents and asks before it acts.',
+  ],
 }
 
 export const skillGroups = [
@@ -46,6 +51,13 @@ export const skillGroups = [
     domain: 'code',
     summary: 'Interfaces for web, mobile and Microsoft 365.',
     skills: ['React', 'Angular', 'Vue.js', '.NET MAUI', 'SharePoint Framework (SPFx)'],
+  },
+  {
+    id: 'ai',
+    title: 'AI & agents',
+    domain: 'ai',
+    summary: 'What I experiment with, mostly in my free time.',
+    skills: ['Local LLMs (Ollama)', 'AI agents & tool calling', 'RAG', 'Vector search (pgvector)', 'AI coding assistants', 'Prompt design'],
   },
   {
     id: 'sap',
