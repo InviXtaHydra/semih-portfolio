@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
+import { useLenis } from 'lenis/react'
 import { Menu, X } from 'lucide-react'
 import Magnetic from './Magnetic'
 import { navLinks, profile } from '../data/profile'
@@ -24,10 +25,18 @@ function useActiveSection(ids) {
 
 const sectionIds = navLinks.map((l) => l.href.slice(1))
 
+// "Get in touch" drifts from orange to coral as you scroll down the page
+function useCtaColor() {
+  const { scrollYProgress } = useScroll()
+  return useTransform(scrollYProgress, [0, 0.5, 1], ['#ff7a2f', '#ff5a36', '#ff4466'])
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const active = useActiveSection(sectionIds)
+  const ctaColor = useCtaColor()
+  const lenis = useLenis()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -38,10 +47,11 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
+    open ? lenis?.stop() : lenis?.start()
     const onKey = (e) => e.key === 'Escape' && setOpen(false)
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [open])
+  }, [open, lenis])
 
   return (
     <header
@@ -82,9 +92,9 @@ export default function Navbar() {
         </ul>
 
         <Magnetic className="hidden md:inline-flex">
-          <a href="#contact" className="inline-flex rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink">
+          <motion.a href="#contact" style={{ '--cta': ctaColor }} className="cta inline-flex rounded-full px-4 py-2 text-sm font-semibold">
             Get in touch
-          </a>
+          </motion.a>
         </Magnetic>
 
         <button
@@ -130,7 +140,8 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              className="mt-auto rounded-full bg-paper py-4 text-center font-medium text-ink"
+              style={{ '--cta': ctaColor }}
+              className="cta mt-auto rounded-full py-4 text-center font-semibold"
             >
               Get in touch
             </motion.a>
