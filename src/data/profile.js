@@ -153,7 +153,7 @@ export const projects = [
     code: 'https://github.com/InviXtaHydra/talentflow-ai',
     video: '/projects/talentflow-demo.mp4',
     poster: '/projects/talentflow-poster.jpg',
-    videoLength: '0:56',
+    videoLength: '1:53',
   },
 ]
 
