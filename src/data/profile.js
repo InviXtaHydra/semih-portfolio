@@ -143,17 +143,17 @@ export const projects = [
     videoLength: '0:46',
   },
   {
-    title: 'IMDBee',
-    category: 'Full-stack',
-    domain: 'code',
+    title: 'TalentFlow AI',
+    category: 'AI / Full-stack',
+    domain: 'ai',
     description:
-      'A movie catalog with accounts, search and filters, star reviews and trailers. Live movie data from TMDB, served through a secured Spring Boot API.',
-    stack: ['Spring Boot', 'Spring Security (JWT)', 'Vue 3', 'Pinia', 'Tailwind CSS', 'PostgreSQL (Supabase)', 'TMDB API'],
-    demo: 'https://imdbee.vercel.app',
-    code: 'https://github.com/InviXtaHydra/imdbee',
-    video: '/projects/imdbee-demo.mp4',
-    poster: '/projects/imdbee-poster.jpg',
-    videoLength: '0:42',
+      'A recruitment platform for the Belgian job market. Candidates upload a CV and get vacancies ranked by an explainable match score (skills, experience, role, education, preferences), then let a local language model tailor their CV to one vacancy. A fact check keeps only claims backed by their real profile. Employers publish detailed, LinkedIn-style vacancies and follow up on applicants.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL + pgvector', 'Ollama (qwen3)', 'Embeddings', 'Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Docker', 'Playwright'],
+    // No live demo: the language model runs on my own machine. The video shows the real app and model.
+    code: 'https://github.com/InviXtaHydra/talentflow-ai',
+    video: '/projects/talentflow-demo.mp4',
+    poster: '/projects/talentflow-poster.jpg',
+    videoLength: '0:56',
   },
 ]
 
